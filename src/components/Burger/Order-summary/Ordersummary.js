@@ -11,7 +11,7 @@ const Ordersummary = (props) => {
             </li>
         })
     return(
-        <div> 
+        <div>
             <h3>Your order</h3>
             <p>Your delicious burger made by this ingredinants</p>
             {ingredients}
