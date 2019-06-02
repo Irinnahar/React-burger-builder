@@ -12,6 +12,7 @@ const Buildcontrols = (props) => {
     ]
     return (
         <div className ="Buildcontrols">
+            <h5>Price : <strong>${props.price.toFixed(2)}</strong> </h5>
             { controls.map(control => {
                 return (
                 <Buildcontrol 
@@ -19,10 +20,14 @@ const Buildcontrols = (props) => {
                     key = {control.type}
                     remove = {() => props.removeIngredient(control.type)}
                     added = {() => props.addingreient(control.type)}
-                    disabled = {props.disabled}>
+                    disabled = {props.disabled[control.type]}>
                 </Buildcontrol>
                 )
             })}
+            <button 
+                className = "OrderButton" 
+                disabled = {props.disableOrder}
+                onClick = {props.showModal}>Order Now</button>
         </div>
     )
 }
