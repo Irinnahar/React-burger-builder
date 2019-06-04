@@ -7,7 +7,7 @@ const Burger = (props) => {
         .map((ingrediant) => {
             return [...Array(props.ingrediant[ingrediant])].map(
                 (_, index) => {
-                    return <BurgerIngrediant type={ingrediant} key={index} />
+                    return <BurgerIngrediant type={ingrediant} key={ingrediant + index} />
                 }
             )
         })
